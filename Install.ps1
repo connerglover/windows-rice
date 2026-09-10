@@ -39,19 +39,16 @@ try{
   if($_.Extension -in @('.json','.jsonc','.yaml','.toml','.ini','.lua','.ps1','.css','.nss','.xaml') -or $_.Name -eq 'whkdrc'){
    $text=[IO.File]::ReadAllText($_.FullName)
    $tokens=@{'{{RICE_ROOT_JSON}}'=$runtime.Replace('\','\\');'{{RICE_ROOT_POSIX}}'=$runtime.Replace('\','/');'{{RICE_ROOT}}'=$runtime;'{{USERPROFILE_JSON}}'=$env:USERPROFILE.Replace('\','\\');'{{USERPROFILE_POSIX}}'=$env:USERPROFILE.Replace('\','/');'{{USERPROFILE}}'=$env:USERPROFILE}
-   foreach($token in $tokens.Keys){$text=$text.Replace($token,$tokens[$token])};[IO.File]::WriteAllText($dest,$text,[Text.UTF8Encoding]::new($false))
+   foreach($token in $tokens.Keys){$text=$text.Replace($token,$tokens[$token])}
+   $encoding=if($rel -eq 'Alt-Tabby\config.ini'){[Text.Encoding]::Unicode}else{[Text.UTF8Encoding]::new($false)}
+   [IO.File]::WriteAllText($dest,$text,$encoding)
   }else{Copy-Item $_.FullName $dest -Force}
  }}
  if(!$SkipPackages){. "$repo\scripts\Download-Extras.ps1"}
  . "$repo\scripts\Configure.ps1"
  if(!$SkipSystem){. "$repo\scripts\Configure-System.ps1"}
- if(!$NoStartup){
-  $task='Everforest V2 Desktop';$existing=Get-ScheduledTask -TaskName $task -ErrorAction SilentlyContinue
-  if($existing){Export-ScheduledTask -TaskName $task|Set-Content "$state\startup-task.xml"}
-  $action=New-ScheduledTaskAction -Execute powershell.exe -Argument ('-NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File "'+$repo+'\scripts\Start-Desktop.ps1" -Root "'+$runtime+'"')
-  $user=[Security.Principal.WindowsIdentity]::GetCurrent().Name;$trigger=New-ScheduledTaskTrigger -AtLogOn -User $user;$trigger.Delay='PT20S'
-  Register-ScheduledTask -TaskName $task -Action $action -Trigger $trigger -Settings (New-ScheduledTaskSettingsSet -ExecutionTimeLimit ([timespan]::Zero) -StartWhenAvailable) -User $user -Force|Out-Null
- }
+ if(!$NoStartup -and !$SkipSystem){& "$repo\scripts\Register-Startup.ps1" -Root $runtime}
+ elseif(!$NoStartup){$notes.Add('Startup registration requires elevation; rerun without -SkipSystem.')}
  $notes.Add('Browser extension imports and Store apps: see docs/INSTALL.md.')
  $notes|Set-Content "$InstallRoot\NEXT-STEPS.txt";Write-Output "Installed. Backup: $state";Write-Output "Checklist: $InstallRoot\NEXT-STEPS.txt"
 }finally{Stop-Transcript|Out-Null}

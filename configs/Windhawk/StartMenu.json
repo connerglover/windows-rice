@@ -87,7 +87,7 @@
   "controlStyles[22].styles[0]": "Background@PointerOver=#414B50",
   "controlStyles[22].styles[1]": "Background@Pressed=#47534A",
   "controlStyles[22].styles[2]": "CornerRadius=6",
-  "controlStyles[23].target": "GridView#PinnedList > Border > ScrollViewer > Border > Grid > ScrollContentPresenter > ItemsPresenter > ItemsWrapGrid > GridViewItem > Border#ContentBorder@CommonStates > Grid#DroppedFlickerWorkaroundWrapper > Border",
+  "controlStyles[23].target": "GridView#PinnedList > Border > ScrollViewer > Border > Grid > ScrollContentPresenter > ItemsPresenter > ItemsWrapGrid > GridViewItem > Border#ContentBorder@CommonStates",
   "controlStyles[23].styles[0]": "CornerRadius=8",
   "controlStyles[23].styles[1]": "Background@PointerOver=#414B50",
   "controlStyles[23].styles[2]": "Background@Pressed=#47534A",

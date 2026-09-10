@@ -6,6 +6,25 @@ $controller=Join-Path $PSScriptRoot 'Start-Desktop.ps1'
 $backup=Join-Path $Root ('Backup\Startup-'+(Get-Date -Format yyyyMMdd-HHmmss))
 New-Item -ItemType Directory -Force $backup|Out-Null
 $user=[Security.Principal.WindowsIdentity]::GetCurrent().Name
+# Scheduled tasks are not the only startup source: the installed switcher can
+# leave a Startup-folder shortcut pointing to its unwritable Program Files copy.
+$shell=New-Object -ComObject WScript.Shell
+foreach($folder in @([Environment]::GetFolderPath('Startup'),[Environment]::GetFolderPath('CommonStartup'))){
+ if(!(Test-Path -LiteralPath $folder)){continue}
+ foreach($file in Get-ChildItem -LiteralPath $folder -Filter '*.lnk'){
+  $shortcut=$shell.CreateShortcut($file.FullName)
+  if([IO.Path]::GetFileName($shortcut.TargetPath) -ieq 'AltTabby.exe'){
+   Move-Item -LiteralPath $file.FullName -Destination (Join-Path $backup (([guid]::NewGuid().ToString())+'-AltTabby-startup.lnk'))
+  }
+ }
+}
+$menu=Join-Path ([Environment]::GetFolderPath('Programs')) 'Alt-Tabby.lnk'
+$switcher=Join-Path $Root 'Alt-Tabby\AltTabby.exe'
+if((Test-Path -LiteralPath $menu) -and (Test-Path -LiteralPath $switcher)){
+ Copy-Item -LiteralPath $menu -Destination (Join-Path $backup 'AltTabby-menu.lnk')
+ $shortcut=$shell.CreateShortcut($menu)
+ $shortcut.TargetPath=$switcher;$shortcut.WorkingDirectory=Split-Path $switcher;$shortcut.Save()
+}
 # The controller owns Flow startup; retain unrelated Run entries.
 $flow=Join-Path $env:APPDATA 'FlowLauncher\Settings\Settings.json'
 if(Test-Path $flow){

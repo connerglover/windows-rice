@@ -1,0 +1,13 @@
+/* Everforest Fusion — quiet new tab */
+:root {
+  --font-color: 211 198 170 !important;
+  --font-on-blur-color: 211 198 170 !important;
+  --icon-color: #859289;
+  --accent-color: 167 192 128;
+  --color-green: 167 192 128;
+}
+#time { font-family: 'JetBrainsMono Nerd Font', 'JetBrains Mono', monospace; }
+#time .digital { color: #A7C080; font-weight: 400; letter-spacing: -.055em; }
+#time .digital-hh-separator { color: #859289; }
+#time .clock-date { color: #D3C6AA; letter-spacing: .1em; font-size: .9rem; opacity: .85; }
+::selection { background: #A7C080; color: #272E33; }

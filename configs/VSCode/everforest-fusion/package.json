@@ -1,0 +1,22 @@
+{
+  "name": "everforest-fusion",
+  "displayName": "Everforest Fusion",
+  "description": "Charcoal and sage workbench with balanced Everforest syntax colors.",
+  "version": "1.0.0",
+  "publisher": "conner-local",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Everforest Fusion",
+        "uiTheme": "vs-dark",
+        "path": "./themes/everforest-fusion-color-theme.json"
+      }
+    ]
+  }
+}

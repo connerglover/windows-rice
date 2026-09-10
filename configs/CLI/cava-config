@@ -1,0 +1,24 @@
+[general]
+framerate = 45
+bars = 0
+bar_width = 2
+bar_spacing = 1
+
+[input]
+source = auto
+
+[output]
+method = noncurses
+
+[color]
+background = '#272E33'
+foreground = '#A7C080'
+gradient = 1
+gradient_count = 4
+gradient_color_1 = '#47534A'
+gradient_color_2 = '#859F70'
+gradient_color_3 = '#A7C080'
+gradient_color_4 = '#DBBC7F'
+
+[smoothing]
+noise_reduction = 77

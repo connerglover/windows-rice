@@ -1,0 +1,151 @@
+{
+  "$schema": "https://raw.githubusercontent.com/LGUG2Z/komorebi/v0.1.38/schema.json",
+  "app_specific_configuration_path": "$Env:USERPROFILE/applications.json",
+  "window_hiding_behaviour": "Cloak",
+  "cross_monitor_move_behaviour": "Insert",
+  "transparency": false,
+  "transparency_alpha": 252,
+  "default_workspace_padding": 19,
+  "default_container_padding": 5,
+  "border": true,
+  "border_style": "Square",
+  "border_width": 3,
+  "border_offset": -1,
+  "mouse_follows_focus": false,
+  "animation": {
+    "enabled": true,
+    "duration": 160,
+    "fps": 300,
+    "style": {
+      "movement": "EaseInOutQuad",
+      "transparency": "Linear"
+    }
+  },
+  "monitors": [
+    {
+      "workspaces": [
+        {
+          "name": "1",
+          "layout": "BSP"
+        },
+        {
+          "name": "2",
+          "layout": "Grid"
+        },
+        {
+          "name": "3",
+          "layout": "UltrawideVerticalStack"
+        },
+        {
+          "name": "4",
+          "layout": "BSP"
+        },
+        {
+          "name": "5",
+          "layout": "BSP"
+        },
+        {
+          "name": "6",
+          "layout": "BSP"
+        },
+        {
+          "name": "7",
+          "layout": "BSP"
+        },
+        {
+          "name": "8",
+          "layout": "BSP"
+        },
+        {
+          "name": "9",
+          "layout": "BSP"
+        },
+        {
+          "name": "10",
+          "layout": "BSP"
+        }
+      ]
+    },
+    {
+      "workspaces": [
+        {
+          "name": "1",
+          "layout": "BSP"
+        },
+        {
+          "name": "2",
+          "layout": "Grid"
+        },
+        {
+          "name": "3",
+          "layout": "UltrawideVerticalStack"
+        },
+        {
+          "name": "4",
+          "layout": "BSP"
+        },
+        {
+          "name": "5",
+          "layout": "BSP"
+        },
+        {
+          "name": "6",
+          "layout": "BSP"
+        },
+        {
+          "name": "7",
+          "layout": "BSP"
+        },
+        {
+          "name": "8",
+          "layout": "BSP"
+        },
+        {
+          "name": "9",
+          "layout": "BSP"
+        },
+        {
+          "name": "10",
+          "layout": "BSP"
+        }
+      ]
+    }
+  ],
+  "ignore_rules": [
+    {
+      "kind": "Exe",
+      "id": "ACShadows.exe",
+      "matching_strategy": "Equals"
+    },
+    {
+      "kind": "Exe",
+      "id": "Overwatch.exe",
+      "matching_strategy": "Equals"
+    },
+    {
+      "kind": "Exe",
+      "id": "Photos.exe",
+      "matching_strategy": "Equals"
+    },
+    {
+      "kind": "Exe",
+      "id": "PotPlayerMini64.exe",
+      "matching_strategy": "Equals"
+    },
+    {
+      "kind": "Exe",
+      "id": "AmneziaVPN.exe",
+      "matching_strategy": "Equals"
+    }
+  ],
+  "theme": {
+    "palette": "Base16",
+    "name": "EverforestDarkHard",
+    "unfocused_border": "Base0B",
+    "bar_accent": "Base0B",
+    "single_border": "Base05",
+    "floating_border": "Base0B"
+  },
+  "resize_delta": 80
+}
+

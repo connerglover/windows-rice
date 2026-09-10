@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Everforest Fusion</string>
+	<key>settings</key>
+	<array>
+		<dict>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#272E33</string>
+				<key>caret</key>
+				<string>#A7C080</string>
+				<key>foreground</key>
+				<string>#D3C6AA</string>
+				<key>lineHighlight</key>
+				<string>#2F383E</string>
+				<key>selection</key>
+				<string>#47534A</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>comment</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#859289</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>string</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#A7C080</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>keyword, storage</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#E67E80</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>constant.numeric, constant.language</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#D699B6</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>entity.name.function, support.function</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#DBBC7F</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>entity.name.type, support.type</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#7FBBB3</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>variable.parameter</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#D3C6AA</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>scope</key>
+			<string>punctuation</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#9DA9A0</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>

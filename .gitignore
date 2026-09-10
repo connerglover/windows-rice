@@ -1,0 +1,8 @@
+.local/
+.state/
+.cache/
+backups/
+logs/
+*.log
+*.tmp
+.DS_Store

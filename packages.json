@@ -1,0 +1,23 @@
+{
+  "winget": [
+    "LGUG2Z.komorebi",
+    "AmN.yasb",
+    "LGUG2Z.whkd",
+    "wez.wezterm",
+    "RamenSoftware.Windhawk",
+    "Nilesoft.Shell",
+    "Flow-Launcher.Flow-Launcher",
+    "Microsoft.PowerShell",
+    "Starship.Starship",
+    "Fastfetch-cli.Fastfetch",
+    "ajeetdsouza.zoxide",
+    "eza-community.eza",
+    "sharkdp.bat",
+    "junegunn.fzf",
+    "aristocratos.btop4win",
+    "karlstav.cava",
+    "VSCodium.VSCodium",
+    "ImputNet.Helium",
+    "DEVCOM.JetBrainsMonoNerdFont"
+  ]
+}

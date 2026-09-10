@@ -1,0 +1,48 @@
+.shell powershell
+# Ryoku keyboard controls. Alt+Space belongs to Flow Launcher.
+alt + w : & 'C:\Program Files\komorebi\bin\komorebic.exe' close
+alt + left : & 'C:\Program Files\komorebi\bin\komorebic.exe' focus left
+alt + shift + left : & 'C:\Program Files\komorebi\bin\komorebic.exe' move left
+alt + right : & 'C:\Program Files\komorebi\bin\komorebic.exe' focus right
+alt + shift + right : & 'C:\Program Files\komorebi\bin\komorebic.exe' move right
+alt + up : & 'C:\Program Files\komorebi\bin\komorebic.exe' focus up
+alt + shift + up : & 'C:\Program Files\komorebi\bin\komorebic.exe' move up
+alt + down : & 'C:\Program Files\komorebi\bin\komorebic.exe' focus down
+alt + shift + down : & 'C:\Program Files\komorebi\bin\komorebic.exe' move down
+alt + ctrl + left : & 'C:\Program Files\komorebi\bin\komorebic.exe' resize-axis horizontal decrease
+alt + ctrl + right : & 'C:\Program Files\komorebi\bin\komorebic.exe' resize-axis horizontal increase
+alt + ctrl + up : & 'C:\Program Files\komorebi\bin\komorebic.exe' resize-axis vertical decrease
+alt + ctrl + down : & 'C:\Program Files\komorebi\bin\komorebic.exe' resize-axis vertical increase
+alt + oem_plus : & 'C:\Program Files\komorebi\bin\komorebic.exe' resize-axis horizontal-and-vertical increase
+alt + shift + oem_plus : & 'C:\Program Files\komorebi\bin\komorebic.exe' resize-axis horizontal-and-vertical increase
+alt + add : & 'C:\Program Files\komorebi\bin\komorebic.exe' resize-axis horizontal-and-vertical increase
+alt + oem_minus : & 'C:\Program Files\komorebi\bin\komorebic.exe' resize-axis horizontal-and-vertical decrease
+alt + subtract : & 'C:\Program Files\komorebi\bin\komorebic.exe' resize-axis horizontal-and-vertical decrease
+alt + f : & 'C:\Program Files\komorebi\bin\komorebic.exe' toggle-maximize
+alt + a : & 'C:\Program Files\komorebi\bin\komorebic.exe' toggle-float
+alt + 1 : & 'C:\Program Files\komorebi\bin\komorebic.exe' focus-monitor-at-cursor; if ($LASTEXITCODE -eq 0) { & 'C:\Program Files\komorebi\bin\komorebic.exe' focus-workspace 0 }
+alt + shift + 1 : & 'C:\Program Files\komorebi\bin\komorebic.exe' send-to-workspace 0
+alt + 2 : & 'C:\Program Files\komorebi\bin\komorebic.exe' focus-monitor-at-cursor; if ($LASTEXITCODE -eq 0) { & 'C:\Program Files\komorebi\bin\komorebic.exe' focus-workspace 1 }
+alt + shift + 2 : & 'C:\Program Files\komorebi\bin\komorebic.exe' send-to-workspace 1
+alt + 3 : & 'C:\Program Files\komorebi\bin\komorebic.exe' focus-monitor-at-cursor; if ($LASTEXITCODE -eq 0) { & 'C:\Program Files\komorebi\bin\komorebic.exe' focus-workspace 2 }
+alt + shift + 3 : & 'C:\Program Files\komorebi\bin\komorebic.exe' send-to-workspace 2
+alt + 4 : & 'C:\Program Files\komorebi\bin\komorebic.exe' focus-monitor-at-cursor; if ($LASTEXITCODE -eq 0) { & 'C:\Program Files\komorebi\bin\komorebic.exe' focus-workspace 3 }
+alt + shift + 4 : & 'C:\Program Files\komorebi\bin\komorebic.exe' send-to-workspace 3
+alt + 5 : & 'C:\Program Files\komorebi\bin\komorebic.exe' focus-monitor-at-cursor; if ($LASTEXITCODE -eq 0) { & 'C:\Program Files\komorebi\bin\komorebic.exe' focus-workspace 4 }
+alt + shift + 5 : & 'C:\Program Files\komorebi\bin\komorebic.exe' send-to-workspace 4
+alt + 6 : & 'C:\Program Files\komorebi\bin\komorebic.exe' focus-monitor-at-cursor; if ($LASTEXITCODE -eq 0) { & 'C:\Program Files\komorebi\bin\komorebic.exe' focus-workspace 5 }
+alt + shift + 6 : & 'C:\Program Files\komorebi\bin\komorebic.exe' send-to-workspace 5
+alt + 7 : & 'C:\Program Files\komorebi\bin\komorebic.exe' focus-monitor-at-cursor; if ($LASTEXITCODE -eq 0) { & 'C:\Program Files\komorebi\bin\komorebic.exe' focus-workspace 6 }
+alt + shift + 7 : & 'C:\Program Files\komorebi\bin\komorebic.exe' send-to-workspace 6
+alt + 8 : & 'C:\Program Files\komorebi\bin\komorebic.exe' focus-monitor-at-cursor; if ($LASTEXITCODE -eq 0) { & 'C:\Program Files\komorebi\bin\komorebic.exe' focus-workspace 7 }
+alt + shift + 8 : & 'C:\Program Files\komorebi\bin\komorebic.exe' send-to-workspace 7
+alt + 9 : & 'C:\Program Files\komorebi\bin\komorebic.exe' focus-monitor-at-cursor; if ($LASTEXITCODE -eq 0) { & 'C:\Program Files\komorebi\bin\komorebic.exe' focus-workspace 8 }
+alt + shift + 9 : & 'C:\Program Files\komorebi\bin\komorebic.exe' send-to-workspace 8
+alt + 0 : & 'C:\Program Files\komorebi\bin\komorebic.exe' focus-monitor-at-cursor; if ($LASTEXITCODE -eq 0) { & 'C:\Program Files\komorebi\bin\komorebic.exe' focus-workspace 9 }
+alt + shift + 0 : & 'C:\Program Files\komorebi\bin\komorebic.exe' send-to-workspace 9
+alt + return : Start-Process 'C:\Program Files\WezTerm\wezterm-gui.exe' -ArgumentList 'start'
+alt + b : Start-Process ($env:LOCALAPPDATA+'\imput\Helium\Application\chrome.exe') -ArgumentList '--new-window'
+alt + n : Start-Process ($env:LOCALAPPDATA+'\Programs\VSCodium\VSCodium.exe')
+alt + oem_comma : Start-Process 'ms-settings:'
+alt + escape : Start-Process 'ms-actioncenter:controlcenter/true'
+alt + p : Add-Type -AssemblyName System.Windows.Forms; if ([System.Windows.Forms.Screen]::AllScreens.Count -gt 1) { Start-Process DisplaySwitch.exe -ArgumentList '/clone' } else { Start-Process DisplaySwitch.exe -ArgumentList '/extend' }

@@ -1,0 +1,22 @@
+{
+  "mode": 1,
+  "brightness": 100,
+  "contrast": 100,
+  "grayscale": 0,
+  "sepia": 0,
+  "useFont": false,
+  "fontFamily": "Segoe UI",
+  "textStroke": 0,
+  "engine": "dynamicTheme",
+  "stylesheet": "a:link { color: #A7C080 !important; }\na:visited { color: #D699B6 !important; }\n:focus-visible { outline-color: #DBBC7F !important; }",
+  "darkSchemeBackgroundColor": "#272E33",
+  "darkSchemeTextColor": "#D3C6AA",
+  "lightSchemeBackgroundColor": "#FDF6E3",
+  "lightSchemeTextColor": "#5C6A72",
+  "scrollbarColor": "#859289",
+  "selectionColor": "#A7C080",
+  "styleSystemControls": true,
+  "lightColorScheme": "Default",
+  "darkColorScheme": "Default",
+  "immediateModify": false
+}

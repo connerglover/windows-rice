@@ -1,0 +1,506 @@
+watch_stylesheet: true
+watch_config: true
+debug: false
+update_check: true
+bars:
+  primary-bar:
+    enabled: true
+    screens:
+    - '*'
+    class_name: yasb-bar
+    alignment:
+      position: bottom
+      align: center
+    animation:
+      enabled: true
+      duration: 300
+    blur_effect:
+      enabled: false
+      round_corners: true
+    window_flags:
+      always_on_top: true
+      windows_app_bar: true
+      hide_on_fullscreen: true
+    dimensions:
+      width: 100%
+      height: 36
+    padding:
+      top: 0
+      left: 0
+      bottom: 0
+      right: 0
+    widgets:
+      left:
+      - start_button
+      - komorebi_workspaces
+      - komorebi_active_layout
+      - pinned_apps
+      - taskbar
+      right:
+      - media
+      - volume
+      - clock
+      - quick_launch
+      - systray
+      - wallpapers
+      - notifications
+      - power_menu
+widgets:
+  home:
+    type: yasb.home.HomeWidget
+    options:
+      direction: up
+      label: <span>家</span>
+      menu_list:
+      - title: User Home
+        path: '~'
+      - title: Download
+        path: ~\Downloads
+      - title: Documents
+        path: ~\Documents
+      - title: Pictures
+        path: ~\Pictures
+      system_menu: true
+      power_menu: false
+      blur: false
+      round_corners: true
+      round_corners_type: normal
+      border_color: System
+      alignment: left
+      offset_left: -12
+  clock:
+    type: yasb.clock.ClockWidget
+    options:
+      label: '{%a, %d %b %I:%M %p}<span>{alarm}</span>'
+      label_alt: '{%a, %d %b %I:%M %p}'
+      timezones: []
+      calendar:
+        blur: false
+        round_corners: true
+        alignment: center
+        direction: up
+        extended: false
+        show_years: true
+        show_holidays: false
+        show_week_numbers: true
+      callbacks:
+        on_left: toggle_calendar
+  volume:
+    type: yasb.volume.VolumeWidget
+    options:
+      label: <span>{icon}</span> {level}
+      label_alt: '{level}'
+      tooltip: true
+      icons:
+        muted: 
+        '10': 
+        '30': 
+        '60': 
+        '100': 
+      callbacks:
+        on_left: toggle_volume_menu
+        on_right: toggle_mute
+      audio_menu:
+        blur: false
+        round_corners: true
+        round_corners_type: normal
+        border_color: system
+        alignment: right
+        direction: up
+        show_apps: true
+        show_app_labels: true
+        show_app_icons: true
+        show_apps_expanded: false
+        app_icons:
+          toggle_down: 
+          toggle_up: 
+  notifications:
+    type: yasb.notifications.NotificationsWidget
+    options:
+      label: <span></span>
+      label_alt: '{count} notifications'
+      hide_empty: true
+      tooltip: false
+      callbacks:
+        on_left: toggle_notification
+        on_right: do_nothing
+        on_middle: do_nothing
+  power_menu:
+    type: yasb.power_menu.PowerMenuWidget
+    options:
+      label: 
+      uptime: true
+      show_user: false
+      menu_style: fullscreen
+      blur: false
+      blur_background: true
+      animation_duration: 180
+      button_row: 3
+      popup:
+        blur: false
+        direction: up
+        round_corners: true
+        round_corners_type: normal
+        border_color: System
+        alignment: right
+        offset_left: 12
+      profile_image_size: 64
+      buttons:
+        lock:
+        - 
+        - Lock
+        signout:
+        - 
+        - Sign out
+        sleep:
+        - 
+        - Sleep
+        hibernate:
+        - 
+        - Hibernate
+        restart:
+        - 
+        - Restart
+        shutdown:
+        - 
+        - Shut Down
+        cancel:
+        - ''
+        - Cancel
+  active_window:
+    type: yasb.active_window.ActiveWindowWidget
+    options:
+      label: '{win[title]}'
+      label_alt: '{win[title]}'
+      label_no_window: ''
+      label_icon: true
+      label_icon_size: 16
+      max_length: 32
+      max_length_ellipsis: '...'
+      monitor_exclusive: false
+  win_button:
+    type: yasb.custom.CustomWidget
+    options:
+      label: 家
+      label_alt: 家
+      class_name: system-widget
+      callbacks:
+        on_left: exec start_menu
+  lines:
+    type: yasb.custom.CustomWidget
+    options:
+      label: '|'
+      label_alt: '|'
+      class_name: separator-widget
+      callbacks:
+        on_left: do_nothing
+  komorebi_workspaces:
+    type: komorebi.workspaces.WorkspaceWidget
+    options:
+      label_offline: Komorebi Offline
+      label_workspace_btn: '{index}'
+      label_workspace_active_btn: '{index}'
+      label_workspace_populated_btn: '{index}'
+      label_default_name: ''
+      label_zero_index: false
+      hide_empty_workspaces: true
+      hide_if_offline: false
+      toggle_workspace_layer:
+        enabled: false
+        tiling_label: Tiling
+        floating_label: Floating
+      app_icons:
+        enabled_populated: false
+        enabled_active: false
+        size: 12
+        max_icons: 0
+        hide_label: false
+        hide_duplicates: false
+        hide_floating: false
+  komorebi_active_layout:
+    type: komorebi.active_layout.ActiveLayoutWidget
+    options:
+      hide_if_offline: true
+      label: '{layout_name}'
+      layouts:
+      - bsp
+      - columns
+      - rows
+      - grid
+      - vertical_stack
+      - horizontal_stack
+      - ultrawide_vertical_stack
+      - right_main_vertical_stack
+      layout_icons:
+        bsp: 
+        columns: 
+        rows: 
+        grid: "\uDB81\uDF58"
+        scrolling: 
+        vertical_stack: 
+        horizontal_stack: 
+        ultrawide_vertical_stack: 
+        right_main_vertical_stack: 
+        monocle: 
+        maximized: 
+        floating: 
+        paused: "\uDB83\uDF89"
+        tiling: "\uDB81\uDE40"
+      callbacks:
+        on_left: toggle_layout_menu
+        on_middle: next_layout
+        on_right: prev_layout
+      layout_menu:
+        blur: false
+        round_corners: true
+        round_corners_type: normal
+        border_color: System
+        alignment: left
+        direction: up
+        offset_top: 6
+        offset_left: 0
+        show_layout_icons: true
+  cava:
+    type: yasb.cava.CavaWidget
+    options:
+      bar_height: 12
+      waveform: 0
+      waves: 0
+      monstercat: 0
+      sensitivity: 100
+      edge_fade: 1
+      min_bar_height: 0
+      gradient: 0
+      foreground: '#A7C080'
+      bars_number: 10
+      bar_spacing: 2
+      bar_width: 4
+      bar_type: bars
+      framerate: 60
+  systray:
+    type: yasb.systray.SystrayWidget
+    options:
+      class_name: systray
+      label_collapsed: 
+      label_expanded: 
+      label_position: left
+      icon_size: 16
+      pin_click_modifier: alt
+      show_unpinned: false
+      show_unpinned_button: true
+      show_battery: false
+      show_in_popup: 1
+      show_volume: false
+      show_network: false
+      use_hook: false
+      icons_per_row: 3
+      hide_icons: []
+      popup:
+        blur: false
+        round_corners: true
+        round_corners_type: normal
+        border_color: None
+        alignment: center
+        direction: up
+        offset_top: 6
+        offset_left: 0
+  wallpapers:
+    type: yasb.wallpapers.WallpapersWidget
+    options:
+      label: "<span>\uDB83\uDE09</span>"
+      image_path:
+      - {{RICE_ROOT}}\Wallpapers
+      change_automatically: false
+      update_interval: 60
+      engine:
+        enabled: true
+        animation: diamond
+      gallery:
+        enabled: true
+        blur: false
+        image_width: 350
+        image_per_page: 6
+        gallery_columns: 0
+        horizontal_position: center
+        vertical_position: center
+        position_offset: 0
+        respect_work_area: true
+        show_buttons: false
+        orientation: landscape
+        image_spacing: 8
+        lazy_load: true
+        lazy_load_fadein: 400
+        image_corner_radius: 0
+      callbacks:
+        on_left: toggle_gallery
+        on_middle: do_nothing
+        on_right: change_wallpaper
+  media:
+    type: yasb.media.MediaWidget
+    options:
+      label: '{title}{s}{artist}'
+      label_alt: '{title}{s}{artist}'
+      separator: ' - '
+      hide_empty: true
+      callbacks:
+        on_left: toggle_media_menu
+        on_middle: do_nothing
+        on_right: do_nothing
+      max_field_size:
+        label: 45
+        label_alt: 30
+      show_thumbnail: false
+      controls_only: false
+      controls_left: true
+      controls_hide: true
+      thumbnail_alpha: 80
+      thumbnail_padding: 8
+      thumbnail_corner_radius: 16
+      icons:
+        prev_track: 
+        next_track: 
+        play: 
+        pause: 
+      media_menu:
+        blur: false
+        round_corners: false
+        round_corners_type: normal
+        border_color: system
+        alignment: right
+        direction: up
+        offset_top: 6
+        offset_left: 0
+        thumbnail_corner_radius: 0
+        thumbnail_size: 120
+        max_title_size: 60
+        max_artist_size: 50
+        show_source: true
+      media_menu_icons:
+        play: "\uDB81\uDC0A"
+        pause: "\uDB80\uDFE4"
+        prev_track: "\uDB81\uDCAE"
+        next_track: "\uDB81\uDCAD"
+      scrolling_label:
+        enabled: false
+        update_interval_ms: 33
+        style: left
+        separator: ' | '
+        label_padding: 0
+        always_scroll: false
+        ease_slope: 20
+        ease_pos: 0.8
+        ease_min: 0.5
+      progress_bar:
+        enabled: false
+        alignment: bottom
+  language:
+    type: yasb.language.LanguageWidget
+    options:
+      label: '{lang[language_code]}'
+      label_alt: '{lang[full_name]}'
+      update_interval: 1
+      callbacks:
+        on_left: toggle_menu
+        on_middle: do_nothing
+        on_right: toggle_label
+      language_menu:
+        blur: false
+        round_corners: true
+        round_corners_type: normal
+        border_color: system
+        alignment: right
+        direction: up
+        offset_top: 6
+        offset_left: 0
+        show_layout_icon: true
+        layout_icon: "\uDB80\uDF0C"
+  quick_launch:
+    type: yasb.quick_launch.QuickLaunchWidget
+    options:
+      label: 
+      search_placeholder: Search applications...
+      max_results: 30
+      show_icons: true
+      icon_size: 32
+      popup:
+        width: 650
+        height: 400
+        blur: false
+        round_corners: true
+        round_corners_type: normal
+        border_color: system
+        dark_mode: true
+      callbacks:
+        on_left: toggle_quick_launch
+      keybindings: []
+  taskbar:
+    type: yasb.taskbar.TaskbarWidget
+    options:
+      icon_size: 0
+      tooltip: true
+      show_only_visible: true
+      strict_filtering: true
+      monitor_exclusive: true
+      animation:
+        enabled: true
+        duration: 200
+      preview:
+        enabled: true
+        width: 240
+        delay: 400
+        padding: 8
+        margin: 8
+      title_label:
+        enabled: true
+        show: always
+        min_length: 10
+        max_length: 30
+      ignore_apps:
+        processes: []
+        titles: []
+        classes: []
+  start_button:
+    type: yasb.custom.CustomWidget
+    options:
+      label: <span><img src="{{RICE_ROOT_POSIX}}/Icons/windows11-sage.png" width="16" height="16" /></span>
+      label_alt: <span><img src="{{RICE_ROOT_POSIX}}/Icons/windows11-sage.png" width="16" height="16" /></span>
+      class_name: start-button
+      callbacks:
+        on_left: exec start_menu
+        on_middle: do_nothing
+        on_right: exec start_menu
+  pinned_apps:
+    type: yasb.applications.ApplicationsWidget
+    options:
+      label: ''
+      class_name: pinned-apps
+      image_icon_size: 18
+      tooltip: true
+      app_list:
+      - name: Helium
+        icon: {{RICE_ROOT}}\Icons\Expanded\ico\chrome-0b8118e3-IDR_MAINFRAME.ico
+        launch: explorer.exe shell:AppsFolder\Helium.JE6FIF4JALY26BB43VQES7EHEI
+      - name: File Explorer
+        icon: {{RICE_ROOT}}\Icons\ico\folder.png
+        launch: explorer.exe
+      - name: Hydra
+        icon: {{RICE_ROOT}}\Icons\Expanded\NewApps\Hydra-1.ico
+        launch: explorer.exe shell:AppsFolder\gg.hydralauncher.hydra
+      - name: Todoist
+        icon: {{RICE_ROOT}}\Icons\Expanded\NewApps\Todoist-1.ico
+        launch: explorer.exe shell:AppsFolder\com.todoist
+      - name: Terminal
+        icon: {{RICE_ROOT}}\Icons\Expanded\NewApps\wezterm-gui-257.ico
+        launch: explorer.exe shell:AppsFolder\org.wezfurlong.wezterm
+      - name: VSCodium
+        icon: {{RICE_ROOT}}\Icons\Expanded\ico\VSCodium-c3ea831e-1.ico
+        launch: explorer.exe shell:AppsFolder\VSCodium.VSCodium
+      - name: ChatGPT
+        icon: {{RICE_ROOT}}\Icons\Expanded\ico\packaged-chatgpt.ico
+        launch: explorer.exe shell:AppsFolder\OpenAI.Codex_2p2nqsd0c76g0!App
+      - name: Claude
+        icon: {{RICE_ROOT}}\Icons\Expanded\ico\claude-9ccd6205-1.ico
+        launch: explorer.exe shell:AppsFolder\com.squirrel.AnthropicClaude.claude
+      - name: Apple Music
+        icon: {{RICE_ROOT}}\Icons\Expanded\ico\packaged-apple-music.ico
+        launch: explorer.exe shell:AppsFolder\AppleInc.AppleMusicWin_nzyj5cx40ttqa!App

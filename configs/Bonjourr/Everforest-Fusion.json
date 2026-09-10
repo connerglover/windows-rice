@@ -1,0 +1,38 @@
+{
+  "dark": "enabled",
+  "tabtitle": "Everforest",
+  "favicon": "🌿",
+  "time": true,
+  "main": false,
+  "quicklinks": false,
+  "textShadow": 0,
+  "pagegap": 1,
+  "pagewidth": 1000,
+  "backgrounds": {
+    "type": "color",
+    "color": "#272E33",
+    "fadein": 0,
+    "texture": {
+      "opacity": 0
+    }
+  },
+  "clock": {
+    "analog": false,
+    "seconds": false,
+    "ampm": false,
+    "timezone": "auto"
+  },
+  "searchbar": {
+    "on": false
+  },
+  "notes": {
+    "on": false
+  },
+  "quotes": {
+    "on": false
+  },
+  "pomodoro": {
+    "on": false
+  },
+  "css": "/* Everforest Fusion — quiet new tab */\n:root {\n  --font-color: 211 198 170 !important;\n  --font-on-blur-color: 211 198 170 !important;\n  --icon-color: #859289;\n  --accent-color: 167 192 128;\n  --color-green: 167 192 128;\n}\n#time { font-family: 'JetBrainsMono Nerd Font', 'JetBrains Mono', monospace; }\n#time .digital { color: #A7C080; font-weight: 400; letter-spacing: -.055em; }\n#time .digital-hh-separator { color: #859289; }\n#time .clock-date { color: #D3C6AA; letter-spacing: .1em; font-size: .9rem; opacity: .85; }\n::selection { background: #A7C080; color: #272E33; }\n"
+}

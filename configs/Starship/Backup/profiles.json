@@ -1,0 +1,12 @@
+[
+  {
+    "backup": "PowerShell-profile.ps1",
+    "path": "{{USERPROFILE_JSON}}\\Documents\\PowerShell\\Microsoft.PowerShell_profile.ps1",
+    "existed": false
+  },
+  {
+    "backup": "WindowsPowerShell-profile.ps1",
+    "path": "{{USERPROFILE_JSON}}\\Documents\\WindowsPowerShell\\Microsoft.PowerShell_profile.ps1",
+    "existed": true
+  }
+]

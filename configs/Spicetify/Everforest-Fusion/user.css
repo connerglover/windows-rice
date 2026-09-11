@@ -1,0 +1,105 @@
+/* Everforest Fusion: semantic Encore tokens preserve native icon geometry,
+   hover visibility, keyboard interaction and disabled playback states. */
+:root, .encore-dark-theme, .encore-dark-theme .encore-base-set {
+ --background-base: #272e33;
+ --background-highlight: #374145;
+ --background-press: #414b50;
+ --background-elevated-base: #2e383c;
+ --background-elevated-highlight: #374145;
+ --background-elevated-press: #414b50;
+ --background-tinted-base: #ffffff08;
+ --background-tinted-highlight: #a7c0801a;
+ --background-tinted-press: #a7c08029;
+ --text-base: #d3c6aa;
+ --text-subdued: #9da9a0;
+ --text-bright-accent: #a7c080;
+ --text-positive: #a7c080;
+ --text-negative: #e67e80;
+ --text-warning: #dbbc7f;
+ --text-announcement: #7fbbb3;
+ --essential-base: #d3c6aa;
+ --essential-subdued: #859289;
+ --essential-bright-accent: #a7c080;
+ --essential-positive: #a7c080;
+ --essential-negative: #e67e80;
+ --essential-warning: #dbbc7f;
+ --essential-announcement: #7fbbb3;
+ --decorative-base: #d3c6aa;
+ --decorative-subdued: #475258;
+}
+.encore-dark-theme .encore-bright-accent-set,
+.encore-dark-theme .encore-inverted-light-set {
+ --background-base: #a7c080;
+ --background-highlight: #b5cc94;
+ --background-press: #95ad70;
+ --background-elevated-base: #a7c080;
+ --background-elevated-highlight: #b5cc94;
+ --background-elevated-press: #95ad70;
+ --background-tinted-base: #a7c080;
+ --background-tinted-highlight: #b5cc94;
+ --background-tinted-press: #95ad70;
+ --text-base: #232a2e;
+ --text-subdued: #374145;
+ --text-bright-accent: #232a2e;
+ --essential-base: #232a2e;
+ --essential-subdued: #374145;
+ --essential-bright-accent: #232a2e;
+ --decorative-base: #232a2e;
+ --decorative-subdued: #475258;
+}
+.Root__nav-bar, .Root__main-view, .Root__right-sidebar,
+.main-nowPlayingBar-container {
+ border: 1px solid #374145;
+ border-radius: 8px !important;
+}
+.main-nowPlayingBar-container { background-color: #232a2e; }
+/* Only recolor artwork-driven chrome, not album images. */
+.main-home-homeHeader, .main-actionBarBackground-background,
+.main-entityHeader-backgroundColor {
+ background-color: #374145 !important;
+ background-image: linear-gradient(180deg, #374145, #272e33) !important;
+}
+.main-topBar-background { background-color: #272e33 !important; }
+.main-trackList-trackListRow:hover { background-color: #a7c08014; }
+.main-contextMenu-menu {
+ background: #2e383c;
+ color: #d3c6aa;
+ border: 1px solid #475258;
+ border-radius: 8px;
+ box-shadow: 0 8px 24px #0005;
+}
+.main-contextMenu-menuItemButton:hover,
+.main-contextMenu-menuItemButton:focus { background-color: #414b50; }
+.main-trackList-trackListHeader { color: #9da9a0; border-color: #475258; }
+/* Playback buttons inherit Encore tokens; wrappers must stay unpainted. */
+.main-userWidget-box [data-testid="user-widget-avatar"] {
+ background-color: #a7c080 !important;
+ color: #232a2e !important;
+}
+.progress-bar {
+ --fg-color: #a7c080;
+ --bg-color: #495156;
+ --is-active-fg-color: #b5cc94;
+}
+[role="tooltip"], .main-tooltip-tooltip {
+ background-color: #374145;
+ color: #d3c6aa;
+ border-radius: 6px;
+}
+:focus-visible { outline: 2px solid #dbbc7f !important; outline-offset: 2px; }
+::selection { background: #a7c080; color: #232a2e; }
+
+/* Spotify 1.2.99 initials avatar uses an inline account color. */
+.main-userWidget-box .aAaVRma6hMYX3VTJ {
+ background-color: #a7c080 !important;
+ color: #232a2e !important;
+}
+/* Account initials can be rendered through either header variant. */
+.main-userWidget-box [style*="background"],
+ .uK3Y4yuWvsIp0S7p [style*="background"],
+.aAaVRma6hMYX3VTJ {
+ background: #a7c080 !important;
+ color: #232a2e !important;
+}
+
+

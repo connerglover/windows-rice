@@ -19,3 +19,4 @@ $extension=Join-Path $env:USERPROFILE '.vscode-oss\extensions\everforest-fusion'
 $notes.Add('VSCodium: select Everforest Fusion using Preferences: Color Theme. Existing JSONC settings are preserved.')
 $btop=Get-Command btop4win.exe -ErrorAction SilentlyContinue
 if($btop){Put-File "$runtime\CLI\Everforest.theme" (Join-Path (Split-Path $btop.Source) 'themes\Everforest.theme');$notes.Add('btop: select Everforest in its theme settings.')}
+. "$PSScriptRoot\Configure-Music.ps1"

@@ -30,8 +30,9 @@ The default installation lives in `%LOCALAPPDATA%\Everforest-W11-Rice-V2`. Exist
 - Windhawk Start, taskbar, notification-center and resource-icon settings; Nilesoft menu styling.
 - Bibata Everforest cursors, app/system icon assets and Soft Chimes sounds.
 - VSCodium, Vencord/System24, Helium, Bonjourr and Dark Reader theme files.
+- Spicetify and Cider 2 Everforest Fusion themes: charcoal, warm cream and sage, with square panels. See [music theme setup](docs/MUSIC-THEMES.md).
 
-Spicetify, Sigma, the retired AHK hotkey layer, and the broken Explorer Styler layout are excluded from deployment. The installer does not uninstall Windows Terminal or any other application.
+Sigma, the retired AHK hotkey layer, and the broken Explorer Styler layout are excluded from deployment. Music players and Spicetify are optional installs; their theme files are included. The installer does not uninstall Windows Terminal or any other application.
 
 ## Repository layout
 

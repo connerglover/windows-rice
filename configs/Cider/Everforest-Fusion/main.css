@@ -1,0 +1,67 @@
+/* Cider 2.5+ ThemeKit adds !important during processing.
+ * Documented viewport/SFC hooks avoid generated Vue hashes.
+ * Dark appearance only; preserve artwork and native player layout.
+ */
+body.body--dark {
+    --ef-bg: #272e33;
+    --ef-deep: #232a2e;
+    --ef-panel: #2e383c;
+    --ef-border: #374145;
+    --ef-text: #d3c6aa;
+    --ef-muted: #9da9a0;
+    --ef-sage: #a7c080;
+    --ef-focus: #dbbc7f;
+    /* Semantic colors for Quasar controls. */
+    --q-primary: #a7c080;
+    --q-secondary: #83c092;
+    --q-accent: #a7c080;
+    --q-dark: #2e383c;
+    --q-dark-page: #272e33;
+    --q-positive: #a7c080;
+    --q-negative: #e67e80;
+    --q-info: #7fbbb3;
+    --q-warning: #dbbc7f;
+    background-color: var(--ef-bg);
+    color: var(--ef-text);
+    accent-color: var(--ef-sage);
+    color-scheme: dark;
+}
+body.body--dark #app-viewport {
+    background: var(--ef-bg);
+    color: var(--ef-text);
+}
+body.body--dark #app-viewport :is(aside, header, footer, nav) {
+    background-color: var(--ef-deep);
+    border-color: var(--ef-border);
+}
+body.body--dark [sfc-name='NavigationButton'] {
+    color: var(--ef-muted);
+    border-radius: 0;
+}
+body.body--dark [sfc-name='NavigationButton']:hover,
+body.body--dark [sfc-name='NavigationButton'][aria-current='page'] {
+    background-color: var(--ef-border);
+    color: var(--ef-sage);
+}
+body.body--dark [sfc-name='NavigationButton'] .nav-icon { color: var(--ef-sage); }
+body.body--dark :is([role='dialog'], [role='menu']) {
+    background-color: var(--ef-panel);
+    color: var(--ef-text);
+    border: 1px solid var(--ef-border);
+    border-radius: 0;
+}
+body.body--dark :is(input[type='text'], input[type='search'], textarea) {
+    background-color: var(--ef-deep);
+    color: var(--ef-text);
+    border-color: var(--ef-border);
+    caret-color: var(--ef-sage);
+}
+body.body--dark :is(input, textarea)::placeholder { color: var(--ef-muted); }
+body.body--dark :focus-visible {
+    outline: 2px solid var(--ef-focus);
+    outline-offset: 2px;
+}
+body.body--dark ::selection {
+    background: var(--ef-sage);
+    color: var(--ef-bg);
+}

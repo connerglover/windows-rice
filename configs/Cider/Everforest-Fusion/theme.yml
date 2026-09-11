@@ -1,0 +1,6 @@
+name: Everforest Fusion
+author: conner
+stylesheets:
+  - file: main.css
+    name: Everforest Dark
+    description: Charcoal panels, warm cream text and sage accents. Use dark appearance.

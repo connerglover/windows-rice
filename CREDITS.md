@@ -18,6 +18,7 @@
 
 ## Software that makes the desktop possible
 
+- [Spicetify](https://spicetify.app/docs/development/themes) and [Cider 2 ThemeKit](https://github.com/ciderapp/Cider-ThemeKit) — theme formats and application hooks for the original Everforest Fusion music themes.
 - [AmN / YASB](https://github.com/amnweb/yasb) and [Taskbar Hide](https://github.com/amnweb/thide).
 - [LGUG2Z / Komorebi](https://github.com/LGUG2Z/komorebi) and [whkd](https://github.com/LGUG2Z/whkd).
 - [cwilliams5 / Alt-Tabby](https://github.com/cwilliams5/Alt-Tabby).
@@ -29,3 +30,8 @@
 - [Nerd Fonts](https://www.nerdfonts.com), [JetBrains Mono](https://www.jetbrains.com/lp/mono), and Microsoft’s Segoe UI/Fluent icon fonts.
 
 Apple, Microsoft, OpenAI, Anthropic, Todoist, Hydra and all other app publishers retain their respective names, logos and icon rights. Recolored icons are adaptations of those assets, not new logos designed by this project.
+
+- [Ingan121 / CEF/Spotify Tweaks](https://windhawk.net/mods/cef-titlebar-enabler-universal) — transparent native Spotify window controls.
+
+- [uosc by tomasklaen and contributors](https://github.com/tomasklaen/uosc/tree/5.13.0) — MPV controller (LGPL); unmodified release bundled with custom Everforest configuration.
+- [ImageGlass / Duong Dieu Phap](https://github.com/d2phap/ImageGlass) — ImageGlass 10 theme format and Kobe toolbar SVGs (GPL); recolored for Everforest Fusion.

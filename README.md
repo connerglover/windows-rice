@@ -1,4 +1,4 @@
-# Everforest W11 Rice V2
+# Windows Rice
 
 A sage, charcoal and warm-cream Windows 11 desktop, assembled by **conner** with implementation assistance from **OpenAI Codex**.
 

@@ -24,3 +24,9 @@ Run Install.cmd from a permanent checkout on Windows 11 x64. Elevation must use 
 ## Restore
 
 Pass a timestamped backup folder to Restore.ps1. File and registry backups are captured before replacement. Directory backups are staged as `.restored` for review; packages are never uninstalled. Sign out after a system restore. New registry subkeys may remain because importing .reg files restores values rather than deleting every added key.
+
+## Repository location
+
+The working checkout is `C:\Users\conner\Documents\GitHub\windows-rice`. The active local desktop assets reside in `.local\current` under that checkout. Keep that folder in place while using this live setup. Repository moves require updating saved app settings, shortcuts, registry icon paths and scheduled-task actions, not just moving tracked files.
+
+The installer default `%LOCALAPPDATA%\Everforest-W11-Rice-V2` is a separate installation directory, not the former GitHub checkout. It remains unchanged to preserve existing installations and their backup paths.

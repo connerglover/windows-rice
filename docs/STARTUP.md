@@ -16,3 +16,5 @@ Alt-Tabby must have exactly one `[Setup]` section, `FirstRunCompleted=true`, `Ru
 The installer writes Alt-Tabby's INI as UTF-16LE for compatibility with Windows INI APIs. The full current-version template is included so startup does not need to reconstruct a partial file. Launcher diagnostics are enabled; `%TEMP%\tabby_launcher.log` records mutex acquisition and GUI/worker readiness.
 
 Live verification on September 9, 2026: both tasks returned zero; Komorebi returned a valid IPC state; Alt-Tabby acquired its mutex and started its GUI and pump from the writable theme folder. Repeating startup preserved existing process IDs. A new sign-in remains the final boot-specific check.
+
+Display changes: the desktop stage starts Watch-DisplayLayout.ps1. It waits for monitor/resolution change events, lets changes settle for four seconds, and reloads an already-running YASB to rebuild its appbar reservation. A session mutex prevents duplicate watchers. This handles stale reserved space after virtual-display connections; it does not change streaming resolution or restart Komorebi.

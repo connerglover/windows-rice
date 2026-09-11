@@ -59,6 +59,7 @@ try{
   Launch 'thide' $thide
   Start-Sleep 3
   if(Get-Process yasb -ErrorAction SilentlyContinue){& 'C:\Program Files\YASB\yasbc.exe' reload|Out-Null}else{Launch 'yasb' 'C:\Program Files\YASB\yasb.exe'}
+  Start-Process powershell.exe -WindowStyle Hidden -ArgumentList ('-NoProfile -ExecutionPolicy Bypass -File "'+$PSScriptRoot+'\Watch-DisplayLayout.ps1"')
  }
  Log 'Completed'
 }catch{Log "ERROR $_";exit 1}finally{$mutex.ReleaseMutex();$mutex.Dispose()}

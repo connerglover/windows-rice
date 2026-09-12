@@ -146,6 +146,12 @@
     "single_border": "Base05",
     "floating_border": "Base0B"
   },
-  "resize_delta": 80
+  "resize_delta": 80,
+  "manage_rules": [
+    {
+      "id": "claude.exe",
+      "matching_strategy": "Equals",
+      "kind": "Exe"
+    }
+  ]
 }
-

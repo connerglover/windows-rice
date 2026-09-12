@@ -35,3 +35,4 @@ Apple, Microsoft, OpenAI, Anthropic, Todoist, Hydra and all other app publishers
 
 - [uosc by tomasklaen and contributors](https://github.com/tomasklaen/uosc/tree/5.13.0) — MPV controller (LGPL); unmodified release bundled with custom Everforest configuration.
 - [ImageGlass / Duong Dieu Phap](https://github.com/d2phap/ImageGlass) — ImageGlass 10 theme format and Kobe toolbar SVGs (GPL); recolored for Everforest Fusion.
+- [SumatraPDF and contributors](https://www.sumatrapdfreader.org/) — PDF reader and native theme support; Everforest Fusion adaptation by conner and OpenAI Codex.

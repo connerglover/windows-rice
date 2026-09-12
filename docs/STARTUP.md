@@ -18,3 +18,5 @@ The installer writes Alt-Tabby's INI as UTF-16LE for compatibility with Windows 
 Live verification on September 9, 2026: both tasks returned zero; Komorebi returned a valid IPC state; Alt-Tabby acquired its mutex and started its GUI and pump from the writable theme folder. Repeating startup preserved existing process IDs. A new sign-in remains the final boot-specific check.
 
 Display changes: the desktop stage starts Watch-DisplayLayout.ps1. It waits for monitor/resolution change events, lets changes settle for four seconds, and reloads an already-running YASB to rebuild its appbar reservation. A session mutex prevents duplicate watchers. This handles stale reserved space after virtual-display connections; it does not change streaming resolution or restart Komorebi.
+
+Startup recovery: Core retries Komorebi readiness up to six times to tolerate foreground-access denial during login. The display watcher polls fresh monitor bounds every three seconds, waits for three matching readings, then reloads YASB and retiles Komorebi. Its log is in LOCALAPPDATA/Everforest-display-layout.log. Reboot and remote-resolution transitions still require live acceptance testing.

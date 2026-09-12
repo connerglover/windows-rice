@@ -35,6 +35,8 @@ try{
   Start-Sleep 1
  }
  if($Stage -eq 'Core'){
+  $ready=$false
+  for($attempt=1;$attempt -le 6;$attempt++){
   if(!(Get-Process komorebi -ErrorAction SilentlyContinue)){
    # Preserve stale IPC data; never touch a running window manager's socket.
    $data=Join-Path $env:LOCALAPPDATA 'komorebi'
@@ -45,7 +47,11 @@ try{
    New-Item -ItemType Directory -Force $data|Out-Null
    Start-Process 'C:\Program Files\komorebi\bin\komorebi.exe' -ArgumentList ('--config "'+$env:USERPROFILE+'\komorebi.json"') -WorkingDirectory $env:USERPROFILE -WindowStyle Hidden -RedirectStandardOutput "$logs\komorebi.stdout.log" -RedirectStandardError "$logs\komorebi.stderr.log"
   }
-  if(!(Wait-Ready 35)){throw 'Komorebi failed readiness; see komorebi.stderr.log'}
+  if(Wait-Ready 10){$ready=$true;break}
+  Log "Komorebi attempt $attempt not ready; waiting for the interactive desktop"
+  Start-Sleep -Seconds 10
+  }
+  if(!$ready){throw 'Komorebi failed readiness after retries; see komorebi.stderr.log'}
   Log 'Komorebi IPC ready'
   if(!(Get-Process whkd -ErrorAction SilentlyContinue)){
    Start-Process 'C:\Program Files\whkd\bin\whkd.exe' -ArgumentList ('--config "'+$Root+'\Hotkeys\whkdrc"') -WorkingDirectory "$Root\Hotkeys" -WindowStyle Hidden -RedirectStandardOutput "$logs\whkd.stdout.log" -RedirectStandardError "$logs\whkd.stderr.log"

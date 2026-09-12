@@ -1,0 +1,8 @@
+[
+    Name = Everforest Fusion
+    TextColor = #D3C6AA
+    BackgroundColor = #272E33
+    ControlBackgroundColor = #2F383E
+    LinkColor = #A7C080
+    ColorizeControls = true
+]
